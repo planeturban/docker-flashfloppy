@@ -12,7 +12,7 @@ RUN apt-get update && \
  		zip && pip install --user crcmod intelhex
 
 WORKDIR /tmp/FlashFloppy
-CMD git clone https://github.com/keirf/FlashFloppy.git . && make dist
+CMD git clone https://github.com/keirf/FlashFloppy.git . && make dist && mv flashfloppy*.zip /output
 
 # Ports and volumes.
-VOLUME /tmp
+VOLUME /output
