@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:20.04
 ENV MAKE_OPTS ""
 ENV COMMIT ""
 ENV DEBUG ""
@@ -8,11 +8,11 @@ RUN apt-get update && \
 		gcc-arm-none-eabi \
  		srecord \
  		stm32flash \
- 		python-pip \
+ 		python3-pip \
  		wget \
  		unzip \
  		zip \
-		apt-utils && pip install --user crcmod intelhex
+		apt-utils && pip3 install --user crcmod intelhex
 
 WORKDIR /tmp/FlashFloppy
 
